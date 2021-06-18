@@ -1,0 +1,46 @@
+li{
+    list-style: none;
+    vertical-align: middle;
+}
+
+ul{
+    padding-inline-start: 0px;
+    background-color: lightgray;
+    display: block;
+}
+
+/* @media (min-width : 800px) {
+    #comps{
+        float: left;
+        width: 50%;
+    }
+    #parts{
+        float: right;
+        width: 50%;
+    }
+}
+
+@media (max-width : 800px) {
+    /* .items, .parts{
+        float: none;
+    } */
+} */
+
+.chk-shadow{
+    height: 100%;
+    margin: 0 0 0 0;
+}
+
+.img-item:hover{
+    opacity: .8;
+    cursor: pointer;
+}
+
+.item-box{
+    height: 46px;
+}
+
+.wh-46{
+    width: 46px;
+    height: 46px;
+}
