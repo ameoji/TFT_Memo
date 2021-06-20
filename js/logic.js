@@ -23,7 +23,7 @@ function initialized() {
 $(document).on('click', '.chk-shadow' , function() {
   console.log('chk-shadow clicked');
   var target =  $(this).parents('.selected-box').find('.comp');
-  target.toggleClass('is-shadow');
+  target.toggleClass(FLAG_IS_SHADOWN);
 });
 
 
@@ -51,20 +51,53 @@ $(document).on('click', '.btn-delete' , function() {
 $(document).on('click', '.pick-box' , function() {
   console.log('pick-box clicked');
   var ID = $(this).attr('id');
-  
+  getItemData(ID,false); 
+});
+
+/*---------------------------------------
+削除ボタン押下時の挙動
+---------------------------------------*/
+$(document).on('click', '#btn-clear' , function(d) {
+  $('#wrap-items').empty();
+});
+
+/*---------------------------------------
+テンプレート選択時の挙動
+---------------------------------------*/
+$(document).on('change', '#template-box' , function(d) {
+  $('#wrap-items').empty();
+  var target = getTemplate(d.target.value);
+  if(target != ''){
+    target.forEach(function (row){
+      getItemData(row['name'],row['isShadow']); 
+    });
+  }
+});
+
+/*---------------------------------------
+アイテムの構成情報を取得
+---------------------------------------*/
+function getItemData(name, isShadow = false){
   var data = null;
   ITEM_TABLE.forEach(function (row){
-    if(ID == row['name']){
+    if(name == row['name']){
       console.log('found');
       data = row;
     }
   });
-  
+
+  var strShadow = '';
+  var strShadowFlag = '';
+  if(isShadow){
+    strShadow = FLAG_IS_SHADOWN;
+    strShadowFlag = 'checked="checked"';
+  }
+
   var str = '' +
     '<div class="selected-box">' +
-    '  <input type="checkbox" class="chk-shadow" />' +
+    '  <input type="checkbox" class="chk-shadow" ' + strShadowFlag +'/>' +
     '  <ul id="items1" class="items">' +
-    '    <li class="item-box wh-50 comp">' +
+    '    <li class="item-box wh-50 comp ' + strShadow +'">' +
     '      <div class="img-box wh-46">' +
     '        <img src="' + data['img_src'] + '" class="wh-46 img-item" />' +
     '      </div>' +
@@ -85,8 +118,7 @@ $(document).on('click', '.pick-box' , function() {
     '  </div>' +
     '</div>' ; 
   $('#wrap-items').append(str);
-  
-});
+}
 
 function getPartsURL(name){
   var ret = ''; 

@@ -1,3 +1,5 @@
+const FLAG_IS_SHADOWN = 'is-shadow';
+
 const BF       = 'B.F.Sword';
 const RB       = 'Recurve Bow';
 const MUDADEKA = 'Needlessly Large Rod';

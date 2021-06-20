@@ -7,6 +7,7 @@
     crossorigin="anonymous"></script>
   <script src="./js/define.js"></script>
   <script src="./js/logic.js"></script>
+  <script src="./js/templates.js"></script>
   <script>
     window.onload = function () {
       initialized();
@@ -29,6 +30,14 @@
       </div>
     </li>
   </ul>
+
+  <input type="button" id="btn-clear" value="ALL CLEAR">
+  <select id="template-box">
+    <option value="">------</option>
+    <option value="TEMPLATE1">キャバリエ、スペルウィーバー</option>
+    <option value="TEMPLATE2">4 ドラゴンスレイヤー4 ナイトブリンガー3 スカーミッシャー</option>
+  </select>
+
   <div id="wrap-items">
     <div class="selected-box">
       <input type="checkbox" class="chk-shadow" />
