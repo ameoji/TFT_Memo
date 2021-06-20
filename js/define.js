@@ -250,20 +250,21 @@ const ITEM_TABLE = [
     parts1: MUDADEKA,
     parts2: S_HERA,
   },
+  //涙
   {
-    name: "",
+    name: "Blue Buff",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC95Y0pZdzBmTy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: TEAR,
     parts2: TEAR,
   },
   {
-    name: "",
+    name: "Redemption",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC96bmNCemFWRC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjI0LCJmaXQiOiJjb3ZlciJ9fX0=',
     parts1: TEAR,
     parts2: BELT,
   },
   {
-    name: "",
+    name: "Hand of Justice",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9acTRSMDIwQS5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: TEAR,
     parts2: GROVES,
@@ -339,7 +340,6 @@ const ITEM_TABLE = [
 const PARTS_TABLE = [
   {
     name:BF,
-    // src:'https://tft.wik1.net/image/item/1038.png',
     src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC8wSFJXVzBkQy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
   },
   {
