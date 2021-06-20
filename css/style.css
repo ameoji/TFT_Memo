@@ -10,6 +10,14 @@ ul{
     background-color: lightgray;
 }
 
+/* id */
+
+#btn-load, #btn-save{
+    display: none;
+}
+
+/* class */
+
 .btn-box{
     display: inline-block;
     vertical-align: middle;
@@ -17,6 +25,20 @@ ul{
 
 .btn-delete{
 
+}
+
+.btn-load{
+    padding: 3px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: lightgrey;
+}
+
+.btn-save{
+    padding: 3px;
+    border-radius: 3px;
+    margin: 2px;
+    background-color: lightgrey;
 }
 
 .chk-shadow{
@@ -30,7 +52,7 @@ ul{
     padding: 5px;
 }
 
-.img-item:hover{
+.img-item:hover , .btn-load:hover, .btn-save:hover{
     opacity: .6;
     cursor: pointer;
 }

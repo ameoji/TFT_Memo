@@ -54,12 +54,57 @@ $(document).on('click', '.pick-box' , function() {
   getItemData(ID,false); 
 });
 
+
 /*---------------------------------------
 削除ボタン押下時の挙動
 ---------------------------------------*/
 $(document).on('click', '#btn-clear' , function(d) {
   $('#wrap-items').empty();
 });
+
+
+/*---------------------------------------
+保存ボタン押下時の挙動
+---------------------------------------*/
+$(document).on('click', '#btn-save', function (d) {
+  console.log('btn-save');
+  var target = {data:[]};
+  $('#wrap-items').children().each(function (index, element){
+    console.log(index);
+    var row = {};
+    row['name'] = $(element).attr('item-name');
+    row['isShadow'] = $(element).find('.chk-shadow').prop('checked');
+    target['data'].push(row);
+  });
+
+  const a = document.createElement('a');
+  a.href = 'data:text/plain,' + encodeURIComponent(JSON.stringify(target));
+  a.download = 'test.json';
+
+  a.style.display = 'none';
+  document.body.appendChild(a); // ※ DOM が構築されてからでないとエラーになる
+  a.click();
+  document.body.removeChild(a);
+});
+
+
+/*---------------------------------------
+読込ボタン押下時の挙動
+---------------------------------------*/
+$(document).on('change', '#btn-load', function (d) {
+  $('#wrap-items').empty();
+  var file = d.target.files;
+  var reader = new FileReader();
+  reader.readAsText(file[0]);
+  reader.onload = function (ev) {
+    var data = JSON.parse(reader.result);
+    data['data'].forEach(function (row){
+      console.log(row);
+      getItemData(row['name'],row['isShadow']);
+    })
+  }
+});
+
 
 /*---------------------------------------
 テンプレート選択時の挙動
@@ -73,6 +118,7 @@ $(document).on('change', '#template-box' , function(d) {
     });
   }
 });
+
 
 /*---------------------------------------
 アイテムの構成情報を取得
@@ -94,7 +140,7 @@ function getItemData(name, isShadow = false){
   }
 
   var str = '' +
-    '<div class="selected-box">' +
+    '<div class="selected-box" item-name="' + name +'">' +
     '  <input type="checkbox" class="chk-shadow" ' + strShadowFlag +'/>' +
     '  <ul id="items1" class="items">' +
     '    <li class="item-box wh-50 comp ' + strShadow +'">' +
