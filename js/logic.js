@@ -79,7 +79,7 @@ $(document).on('click', '#btn-save', function (d) {
 
   const a = document.createElement('a');
   a.href = 'data:text/plain,' + encodeURIComponent(JSON.stringify(target));
-  a.download = 'test.json';
+  a.download = 'template.json';
 
   a.style.display = 'none';
   document.body.appendChild(a); // ※ DOM が構築されてからでないとエラーになる
