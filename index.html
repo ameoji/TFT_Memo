@@ -9,31 +9,50 @@
   <script src="./js/logic.js"></script>
   <script>
     window.onload = function () {
-
+      initialized();
     }
   </script>
-  <title></title>
+  <title> TFTメモ </title>
 </head>
 
 <body>
-  <div class="wrap-items">
-    <ul id="comps">
-      <li class="item-box">
-        <input type="checkbox" class="chk-shadow"/>
-        <img src="./tmp/img.png" class="wh-46 img-item"/>
-      </li>
-      <li class="item-box">
-        <input type="checkbox" class="chk-shadow"/>
-        <img src="./tmp/img.png" class="wh-46 img-item"/>
-      </li>
-    </ul>
-    <ul id="parts">
-      <li class="item-box">
-        <input type="checkbox" class="chk-shadow"/>
-        <img src="./tmp/img.png" class="wh-46 img-item"/>
-      </li>
-
-    </ul>
+  <!-- ピック予定の完成品一覧 -->
+  <ul id="pick-items" class="items">
+    <li class="item-box wh-50 pick-box">
+      <div class="img-box wh-46">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+    <li class="item-box wh-50">
+      <div class="img-box wh-46 pick-box">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+  </ul>
+  <div id="wrap-items">
+    <div class="selected-box">
+      <input type="checkbox" class="chk-shadow" />
+      <ul id="items1" class="items">
+        <li class="item-box wh-50 comp is-shadow">
+          <div class="img-box wh-46">
+            <img src="./tmp/img.png" class="wh-46 img-item" />
+          </div>
+        </li>
+        <li class="item-box wh-50">
+          <div class="img-box wh-46">
+            <img src="./tmp/img.png" class="wh-46 img-item" />
+          </div>
+        </li>
+        <li class="item-box wh-50 is-selected">
+          <div class="img-box wh-46">
+            <img src="./tmp/img.png" class="wh-46 img-item" />
+          </div>
+        </li>
+      </ul>
+      <div class="btn-box">
+        <input type="button" class="btn-delete" value="del" />
+      </div>
+    </div>
   </div>
 </body>
 
