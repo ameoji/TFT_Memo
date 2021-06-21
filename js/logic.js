@@ -16,6 +16,17 @@ function initialized() {
   });
 }
 
+
+/*---------------------------------------
+使うアイテムを選択するボックスの挙動
+---------------------------------------*/
+$(document).on('click', '.pick-box' , function() {
+  console.log('pick-box clicked');
+  var ID = $(this).attr('id');
+  getItemData(ID,false); 
+});
+
+
 //------------------------------選択したアイテムに対する挙動 START------------------------------
 
 /*---------------------------------------
@@ -62,21 +73,25 @@ $(document).on('click', '.btn-delete' , function() {
 
 
 /*---------------------------------------
-使うアイテムを選択するボックスの挙動
----------------------------------------*/
-$(document).on('click', '.pick-box' , function() {
-  console.log('pick-box clicked');
-  var ID = $(this).attr('id');
-  getItemData(ID,false); 
-});
-
-
-/*---------------------------------------
-削除ボタン押下時の挙動
+all clear ボタン押下時の挙動
 ---------------------------------------*/
 $(document).on('click', '#btn-clear' , function(d) {
   $('#wrap-items').empty();
   $('#template-box').val("");
+});
+
+
+/*---------------------------------------
+テンプレート選択時の挙動
+---------------------------------------*/
+$(document).on('change', '#template-box' , function(d) {
+  $('#wrap-items').empty();
+  var target = getTemplate(d.target.value);
+  if(target != ''){
+    target.forEach(function (row){
+      getItemData(row['name'],row['isShadow']); 
+    });
+  }
 });
 
 
@@ -124,27 +139,12 @@ $(document).on('change', '#btn-load', function (d) {
 
 
 /*---------------------------------------
-テンプレート選択時の挙動
----------------------------------------*/
-$(document).on('change', '#template-box' , function(d) {
-  $('#wrap-items').empty();
-  var target = getTemplate(d.target.value);
-  if(target != ''){
-    target.forEach(function (row){
-      getItemData(row['name'],row['isShadow']); 
-    });
-  }
-});
-
-
-/*---------------------------------------
 アイテムの構成情報を取得
 ---------------------------------------*/
 function getItemData(name, isShadow = false){
   var data = null;
   ITEM_TABLE.forEach(function (row){
     if(name == row['name']){
-      console.log('found');
       data = row;
     }
   });
