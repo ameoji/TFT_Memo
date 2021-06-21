@@ -60,6 +60,7 @@ $(document).on('click', '.pick-box' , function() {
 ---------------------------------------*/
 $(document).on('click', '#btn-clear' , function(d) {
   $('#wrap-items').empty();
+  $('#template-box').val("");
 });
 
 
