@@ -16,6 +16,10 @@ ul{
     display: none;
 }
 
+#need-parts{
+    min-height: 80px;
+}
+
 /* class */
 
 .btn-box{

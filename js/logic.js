@@ -32,6 +32,7 @@ function initialized() {
       '</li>';
     $('#need-parts').append(str);
   });
+  calculatePartsAmounts();
 }
 
 
@@ -240,7 +241,21 @@ function calculatePartsAmounts(){
   console.log(partsAmount);
   //パーツ数をパーツリストに付与
   $('#need-parts').find('.parts-amounts').each(function (index, element){
-    console.log()
     $(element).text(partsAmount[$(element).attr('item-name')]);
+
+    //必要数に応じて表示を変更
+    if(partsAmount[$(element).attr('item-name')] == 0){
+      $(element).css('color','black');
+      $(element).parent().css('display','none');
+    }else if(partsAmount[$(element).attr('item-name')] == 1){
+      $(element).css('color','black');
+      $(element).parent().css('display','inline-block');
+    }else if(partsAmount[$(element).attr('item-name')] <= 2){
+      $(element).css('color','blue');
+      $(element).parent().css('display','inline-block');
+    }else if(partsAmount[$(element).attr('item-name')] > 2){
+      $(element).css('color','red');
+      $(element).parent().css('display','inline-block');
+    }
   });
 }
