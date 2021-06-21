@@ -1,4 +1,5 @@
 const FLAG_IS_SHADOWN = 'is-shadow';
+const FLAG_IS_SELECTED = 'is-selected';
 
 const BF       = 'B.F.Sword';
 const RB       = 'Recurve Bow';

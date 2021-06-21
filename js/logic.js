@@ -60,10 +60,10 @@ $(document).on('click', '.chk-shadow' , function() {
 アイテム選択時の挙動(親)
 ---------------------------------------*/
 $(document).on('click', '.selected-box .comp' , function() {
-  $(this).toggleClass('is-selected');
+  $(this).toggleClass(FLAG_IS_SELECTED);
 
   $(this).parents('ul').children('.parts').each(function (index, element){
-    $(element).toggleClass('is-selected');
+    $(element).toggleClass(FLAG_IS_SELECTED);
   });
   calculatePartsAmounts();
 });
@@ -73,7 +73,7 @@ $(document).on('click', '.selected-box .comp' , function() {
 アイテム選択時の挙動(子供)
 ---------------------------------------*/
 $(document).on('click', '.selected-box .parts' , function() {
-  $(this).toggleClass('is-selected');
+  $(this).toggleClass(FLAG_IS_SELECTED);
   calculatePartsAmounts();
 });  
 
@@ -226,7 +226,9 @@ function calculatePartsAmounts(){
   //選択中のアイテムから必要パーツ数を計算
   $('#wrap-items').children().each(function (index, p_element){
     $(p_element).find('.parts').each(function (index,c_element){
-      partsAmount[$(c_element).attr('item-name')] += 1;
+      if($(c_element).hasClass(FLAG_IS_SELECTED) == false){
+        partsAmount[$(c_element).attr('item-name')] += 1;
+      }
     }); 
   });
 
