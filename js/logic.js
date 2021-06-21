@@ -16,6 +16,7 @@ function initialized() {
   });
 }
 
+//------------------------------選択したアイテムに対する挙動 START------------------------------
 
 /*---------------------------------------
 チェックボックスの挙動
@@ -28,12 +29,25 @@ $(document).on('click', '.chk-shadow' , function() {
 
 
 /*---------------------------------------
-アイテム選択時の挙動
+アイテム選択時の挙動(親)
 ---------------------------------------*/
-$(document).on('click', '.selected-box .item-box' , function() {
+$(document).on('click', '.selected-box .comp' , function() {
   console.log('item-box clicked');
   $(this).toggleClass('is-selected');
+
+  $(this).parents('ul').children('.parts').each(function (index, element){
+    $(element).toggleClass('is-selected');
+  });
 });
+
+
+/*---------------------------------------
+アイテム選択時の挙動(子供)
+---------------------------------------*/
+$(document).on('click', '.selected-box .parts' , function() {
+  console.log('item-box clicked');
+  $(this).toggleClass('is-selected');
+});  
 
 
 /*---------------------------------------
@@ -43,6 +57,8 @@ $(document).on('click', '.btn-delete' , function() {
   console.log('btn-delete clicked');
   $(this).parents('.selected-box').remove();
 });
+
+//------------------------------選択したアイテムに対する挙動 END------------------------------
 
 
 /*---------------------------------------
@@ -143,18 +159,18 @@ function getItemData(name, isShadow = false){
   var str = '' +
     '<div class="selected-box" item-name="' + name +'">' +
     '  <input type="checkbox" class="chk-shadow" ' + strShadowFlag +'/>' +
-    '  <ul id="items1" class="items">' +
+    '  <ul class="items">' +
     '    <li class="item-box wh-50 comp ' + strShadow +'">' +
     '      <div class="img-box wh-46">' +
     '        <img src="' + data['img_src'] + '" class="wh-46 img-item" />' +
     '      </div>' +
     '    </li>' +
-    '    <li class="item-box wh-50">' +
+    '    <li class="item-box wh-50 parts">' +
     '      <div class="img-box wh-46">' +
     '        <img src="' + getPartsURL(data['parts1']) + '" class="wh-46 img-item" />' +
     '      </div>' +
     '    </li>' +
-    '    <li class="item-box wh-50">' +
+    '    <li class="item-box wh-50 parts">' +
     '      <div class="img-box wh-46">' +
     '        <img src="' + getPartsURL(data['parts2']) + '" class="wh-46 img-item" />' +
     '      </div>' +
