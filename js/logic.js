@@ -68,7 +68,6 @@ $(document).on('click', '.selected-box .comp' , function() {
       $(element).addClass(FLAG_IS_SELECTED);
     }else{
       $(element).removeClass(FLAG_IS_SELECTED);
-
     }
   });
   calculatePartsAmounts();
@@ -244,5 +243,4 @@ function calculatePartsAmounts(){
     console.log()
     $(element).text(partsAmount[$(element).attr('item-name')]);
   });
-
 }
