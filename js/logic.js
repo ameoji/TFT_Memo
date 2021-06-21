@@ -62,8 +62,14 @@ $(document).on('click', '.chk-shadow' , function() {
 $(document).on('click', '.selected-box .comp' , function() {
   $(this).toggleClass(FLAG_IS_SELECTED);
 
+  var isSelected = $(this).hasClass(FLAG_IS_SELECTED)
   $(this).parents('ul').children('.parts').each(function (index, element){
-    $(element).toggleClass(FLAG_IS_SELECTED);
+    if(isSelected){
+      $(element).addClass(FLAG_IS_SELECTED);
+    }else{
+      $(element).removeClass(FLAG_IS_SELECTED);
+
+    }
   });
   calculatePartsAmounts();
 });
