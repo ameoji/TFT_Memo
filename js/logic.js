@@ -63,6 +63,7 @@ $(document).on('click', '.chk-shadow' , function() {
 $(document).on('click', '.selected-box .comp' , function() {
   $(this).toggleClass(FLAG_IS_SELECTED);
 
+  //親の状態を粉に反映させる
   var isSelected = $(this).hasClass(FLAG_IS_SELECTED)
   $(this).parents('ul').children('.parts').each(function (index, element){
     if(isSelected){
@@ -80,6 +81,19 @@ $(document).on('click', '.selected-box .comp' , function() {
 ---------------------------------------*/
 $(document).on('click', '.selected-box .parts' , function() {
   $(this).toggleClass(FLAG_IS_SELECTED);
+
+  //子２つの状態を親に反映させる
+  var selectedCount = 0;
+  $(this).parents('ul').children('.parts').each(function (index, element){
+    if($(element).hasClass(FLAG_IS_SELECTED)){
+      selectedCount++;
+    }
+  });
+  if(selectedCount == 2){
+    $(this).parents('ul').children('.comp').addClass(FLAG_IS_SELECTED);
+  }else{
+    $(this).parents('ul').children('.comp').removeClass(FLAG_IS_SELECTED);
+  }
   calculatePartsAmounts();
 });  
 
