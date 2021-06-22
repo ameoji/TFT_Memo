@@ -20,6 +20,11 @@ ul{
     min-height: 80px;
 }
 
+#wrap-items{
+    background-color: lightgray;
+    margin: 10px 0;
+}
+
 /* class */
 
 .btn-box{
