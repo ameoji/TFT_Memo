@@ -68,7 +68,7 @@
   </label>
 
   <!-- 選択したアイテムの一覧 -->
-  <div id="wrap-items">
+  <div id="wrap-items" class="sortable-area">
     <div class="selected-box" item-name="abc">
       <div class="dd-box"></div>
       <input type="checkbox" class="chk-shadow" />
@@ -97,6 +97,21 @@
       </div>
     </div>
   </div>
+
+  <input type="button" id="btn-add-group" value="ADD BUTTON">
+  <div id="wrap-groups">
+    <div class="group-box">
+      <input type="text" class="group-text"/>
+      <div class="sortable-area group-items"></div>
+      <div class="btn-group-box">
+        <label for="g_del_1" class="label-group-del">
+          <img src="./img/trash.svg" class="img-group-del" />
+          <input type="button" class="btn-group-delete" value="del" id="g_del_1"/>
+        </label>
+      </div>
+    </div>
+  </div>
+
 </body>
 
 

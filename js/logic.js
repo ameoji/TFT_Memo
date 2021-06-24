@@ -189,6 +189,35 @@ $(document).on('change', '#btn-load', function (d) {
 
 
 /*---------------------------------------
+グループ追加ボタン押下時
+---------------------------------------*/
+$(document).on('click', '#btn-add-group', function (d) {
+  var rand = Math.random();
+  var str = '' +
+      '<div class="group-box">' +
+      '  <input type="text" class="group-text"/>' +
+      '  <div class="sortable-area group-items"></div>' +
+      '  <div class="btn-group-box">' +
+      '    <label for="g_del_' + rand + '" class="label-group-del">' +
+      '      <img src="./img/trash.svg" class="img-group-del" />' +
+      '      <input type="button" class="btn-group-delete" value="del" id="g_del_' + rand + '"/>' +
+      '    </label>' +
+      '  </div>' +
+      '</div>';
+  $('#wrap-groups').append(str);
+});
+
+
+/*---------------------------------------
+アイテム削除時の挙動
+---------------------------------------*/
+$(document).on('click', '.btn-group-delete' , function() {
+  $(this).parents('.group-box').remove();
+  calculatePartsAmounts();
+});
+
+
+/*---------------------------------------
 アイテムの構成情報を取得
 ---------------------------------------*/
 function getItemData(name, isShadow = false){
@@ -291,6 +320,11 @@ function calculatePartsAmounts(){
   });
 }
 
+/*---------------------------------------
+ソート状態を貼りなおす
+---------------------------------------*/
 function updateSortable(){
-  $('#wrap-items').sortable();
+  $('.sortable-area').sortable({
+    connectWith: '.sortable-area'
+  });
 }
