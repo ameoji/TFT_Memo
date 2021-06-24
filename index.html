@@ -5,6 +5,8 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
   <script src="./js/define.js"></script>
   <script src="./js/logic.js"></script>
   <script src="./js/templates.js"></script>
@@ -18,7 +20,7 @@
 
 <body>
   <!-- ピック予定の完成品一覧 -->
-  <ul id="pick-items" class="items">
+  <ul id="pick-items" class="comp-items">
     <li class="item-box wh-50 pick-box">
       <div class="img-box wh-46">
         <img src="./tmp/img.png" class="wh-46 img-item" />
@@ -33,14 +35,14 @@
 
   <!-- パーツ一覧 -->
   <ul id="need-parts">
-    <li> 
+    <li class="parts-box"> 
       <div class="img-box wh-46 parts-img">
         <img src="./tmp/img.png" class="wh-46 img-item" />
       </div>
       <div class="parts-cross">×</div>
       <div class="parts-amounts" item-name="xxx">4</div>
     </li>
-    <li> 
+    <li class="parts-box"> 
       <div class="img-box wh-46 parts-img">
         <img src="./tmp/img.png" class="wh-46 img-item" />
       </div>
@@ -68,29 +70,34 @@
   <!-- 選択したアイテムの一覧 -->
   <div id="wrap-items">
     <div class="selected-box" item-name="abc">
+      <div class="dd-box"></div>
       <input type="checkbox" class="chk-shadow" />
       <ul class="items">
-        <li class="item-box wh-50 comp is-shadow">
+        <li class="item-box wh-48 comp">
           <div class="img-box wh-46">
-            <img src="./tmp/img.png" class="wh-46 img-item" />
+            <img src="./tmp/img.png" class="wh-44 img-item" />
           </div>
         </li>
-        <li class="item-box wh-50 parts" item-name="xxx">
+        <li class="item-box wh-48 parts">
           <div class="img-box wh-46">
-            <img src="./tmp/img.png" class="wh-46 img-item" />
+            <img src="./tmp/img.png" class="wh-44 img-item" />
           </div>
         </li>
-        <li class="item-box wh-50 parts is-selected" item-name="xxx">
+        <li class="item-box wh-48 parts">
           <div class="img-box wh-46">
-            <img src="./tmp/img.png" class="wh-46 img-item" />
+            <img src="./tmp/img.png" class="wh-44 img-item" />
           </div>
         </li>
       </ul>
       <div class="btn-box">
-        <input type="button" class="btn-delete" value="del" />
+        <label for="del1" class="label-del">
+          <img src="./img/trash.svg" class="img-del" />
+          <input type="button" class="btn-delete" value="del" id="del1"/>
+        </label>
       </div>
     </div>
   </div>
 </body>
+
 
 </html>

@@ -33,6 +33,7 @@ function initialized() {
     $('#need-parts').append(str);
   });
   calculatePartsAmounts();
+  updateSortable()
 }
 
 
@@ -47,6 +48,14 @@ $(document).on('click', '.pick-box' , function() {
 
 
 //------------------------------選択したアイテムに対する挙動 START------------------------------
+
+/*---------------------------------------
+チェックボックスの挙動
+---------------------------------------*/
+$(document).on('mousedown', '.dd-box' , function() {
+  $('#wrap-items').sortable();
+});
+
 
 /*---------------------------------------
 チェックボックスの挙動
@@ -131,6 +140,7 @@ $(document).on('change', '#template-box' , function(d) {
     });
   }
   calculatePartsAmounts();
+  updateSortable()
 });
 
 
@@ -173,6 +183,7 @@ $(document).on('change', '#btn-load', function (d) {
       getItemData(row['name'],row['isShadow']);
     })
     calculatePartsAmounts();
+    updateSortable();
   }
 });
 
@@ -195,31 +206,37 @@ function getItemData(name, isShadow = false){
     strShadowFlag = 'checked="checked"';
   }
 
+  var rand = Math.random();
   var str = '' +
     '<div class="selected-box" item-name="' + name +'">' +
+    '  <div class="dd-box"></div>' +
     '  <input type="checkbox" class="chk-shadow" ' + strShadowFlag +'/>' +
     '  <ul class="items">' +
-    '    <li class="item-box wh-50 comp ' + strShadow +'">' +
+    '    <li class="item-box wh-48 comp ' + strShadow +'">' +
     '      <div class="img-box wh-46">' +
-    '        <img src="' + data['img_src'] + '" class="wh-46 img-item" />' +
+    '        <img src="' + data['img_src'] + '" class="wh-44 img-item" />' +
     '      </div>' +
     '    </li>' +
-    '    <li class="item-box wh-50 parts" item-name="' + data['parts1'] + '">' +
+    '    <li class="item-box wh-48 parts" item-name="' + data['parts1'] + '">' +
     '      <div class="img-box wh-46">' +
-    '        <img src="' + getPartsURL(data['parts1']) + '" class="wh-46 img-item" />' +
+    '        <img src="' + getPartsURL(data['parts1']) + '" class="wh-44 img-item" />' +
     '      </div>' +
     '    </li>' +
-    '    <li class="item-box wh-50 parts" item-name="' + data['parts2'] + '">' +
+    '    <li class="item-box wh-48 parts" item-name="' + data['parts2'] + '">' +
     '      <div class="img-box wh-46">' +
-    '        <img src="' + getPartsURL(data['parts2']) + '" class="wh-46 img-item" />' +
+    '        <img src="' + getPartsURL(data['parts2']) + '" class="wh-44 img-item" />' +
     '      </div>' +
     '    </li>' +
     '  </ul>' +
     '  <div class="btn-box">' +
-    '    <input type="button" class="btn-delete" value="del" />' +
+    '    <label for="del_' + rand + '" class="label-del">' +
+    '      <img src="./img/trash.svg" class="img-del" />' +
+    '      <input type="button" class="btn-delete" value="del" id="del_' + rand + '"/>' +
+    '    </label>' +
     '  </div>' +
     '</div>' ; 
   $('#wrap-items').append(str);
+  updateSortable();
 }
 
 function getPartsURL(name){
@@ -272,4 +289,8 @@ function calculatePartsAmounts(){
       $(element).parent().css('display','inline-block');
     }
   });
+}
+
+function updateSortable(){
+  $('#wrap-items').sortable();
 }

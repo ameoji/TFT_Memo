@@ -1,13 +1,12 @@
 li{
     list-style: none;
-    padding: 5px 0;
-    display: inline-block;
 }
 
 ul{
-    padding-inline-start: 5px;
-    padding-inline-end: 5px;
-    background-color: lightgray;
+    padding-inline-start: 0px;
+    padding-inline-end: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
 }
 
 /* id */
@@ -17,7 +16,9 @@ ul{
 }
 
 #need-parts{
-    min-height: 80px;
+    background-color: lightgrey;
+    margin: 10px 0;
+    min-height: 65px;
 }
 
 #wrap-items{
@@ -29,11 +30,12 @@ ul{
 
 .btn-box{
     display: inline-block;
-    vertical-align: middle;
+    height: 100%;
+    width: 40px;
 }
 
-.btn-delete{
-
+.btn-delete{    
+    display: none;
 }
 
 .btn-load{
@@ -52,14 +54,45 @@ ul{
 
 .chk-shadow{
     display: inline-block;
-    vertical-align: middle;
-    height: 46px;
+    height: 100%;
     margin: 0 0 0 0;
+}
+
+.comp-items{
+    vertical-align: middle;
+    background-color: lightgrey;
+    margin: 10px 0;
+    min-height: 50px;
+    width: 100%;
+}
+
+.dd-box{
+    display: inline-block;
+    height: 100%;
+    width: 15px;
+    background-color: skyblue;
+}
+
+.label-del{
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.list-items{
+    width: 100%;
+    min-height: 100px;
+    background-color: burlywood;
 }
 
 .parts-amounts{
     display: inline-block;
     padding-right: 5px;
+}
+
+.parts-box{
+    display: inline-block;
 }
 
 .parts-cross{
@@ -71,18 +104,23 @@ ul{
 }
 
 .img-box{
-    padding: 5px;
+    padding: 1px;
+}
+
+.img-del{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.img-item{
+    padding: 1px;
+    display: block;
 }
 
 .img-item:hover , .btn-load:hover, .btn-save:hover{
     opacity: .6;
     cursor: pointer;
-}
-
-.list-items{
-    width: 100%;
-    min-height: 100px;
-    background-color: burlywood;
 }
 
 .is-selected .img-item{
@@ -99,11 +137,27 @@ ul{
 
 .items{
     display: inline-block;
-    vertical-align: middle;
+    height: 100%;
+    min-width: 100px;
 }
 
 .item-box{
-    height: 46px;
+    display: inline-block;
+    padding: 1px;
+}
+
+.selected-box{
+    display: inline-block;
+    padding: 2px;
+    height: 50px;
+    margin: 2px;
+    border: solid;
+    border-width: 0.5px;
+}
+
+.wh-44{
+    width: 44px;
+    height: 44px;
 }
 
 .wh-46{
@@ -111,12 +165,12 @@ ul{
     height: 46px;
 }
 
+.wh-48{
+    width: 48px;
+    height: 48px;
+}
+
 .wh-50{
     width: 50px;
     height: 50px;
-}
-
-.selected-box{
-    display: inline-block;
-    padding: 5px;
 }
