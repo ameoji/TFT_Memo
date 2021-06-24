@@ -205,6 +205,7 @@ $(document).on('click', '#btn-add-group', function (d) {
       '  </div>' +
       '</div>';
   $('#wrap-groups').append(str);
+  updateSortable();
 });
 
 
