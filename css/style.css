@@ -93,6 +93,7 @@ ul{
 .etc{
     width: 100%;
     resize: vertical;
+    line-height: 15px;
 }
 
 .group-box{
