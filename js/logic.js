@@ -385,6 +385,7 @@ function clearGroupBox(){
     //最初の箱だけ残して後は消す
     if(index == 0){
       $(element).find('.group-text').val('');
+      $(element).find('.etc').val('');
       $(element).find('.group-items').empty();
     }else{
       $(element).remove();
