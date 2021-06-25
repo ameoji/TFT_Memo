@@ -42,7 +42,8 @@ function initialized() {
 ---------------------------------------*/
 $(document).on('click', '.pick-box' , function() {
   var ID = $(this).attr('id');
-  getItemData(ID,false); 
+  $('#wrap-items').append(getItemData(ID,false));
+  updateSortable();
   calculatePartsAmounts();
 });
 
@@ -124,6 +125,7 @@ all clear ボタン押下時の挙動
 $(document).on('click', '#btn-clear' , function(d) {
   $('#wrap-items').empty();
   $('#template-box').val("");
+  clearGroupBox();
   calculatePartsAmounts();
 });
 
@@ -136,7 +138,8 @@ $(document).on('change', '#template-box' , function(d) {
   var target = getTemplate(d.target.value);
   if(target != ''){
     target.forEach(function (row){
-      getItemData(row['name'],row['isShadow']); 
+      $('#wrap-items').append(getItemData(row['name'],row['isShadow']));
+      updateSortable();
     });
   }
   calculatePartsAmounts();
@@ -150,13 +153,31 @@ $(document).on('change', '#template-box' , function(d) {
 $(document).on('click', '#btn-save', function (d) {
   var target = {data:[]};
   $('#wrap-items').children().each(function (index, element){
-    console.log(index);
     var row = {};
     row['name'] = $(element).attr('item-name');
     row['isShadow'] = $(element).find('.chk-shadow').prop('checked');
     target['data'].push(row);
   });
 
+  var arr = [];
+  $('#wrap-groups').find('.group-box').each(function (index, element){
+    var gbox = {};
+    gbox['title'] = $(element).find('.group-text').val();
+    gbox['memo'] = $(element).find('.etc').val();
+    
+    gbox['data'] = [];
+    $(element).find('.selected-box').each(function (index, g_element){
+      var row = {};
+      row['name'] = $(g_element).attr('item-name');
+      row['isShadow'] = $(g_element).find('.chk-shadow').prop('checked');
+      gbox['data'].push(row);
+    });
+
+    arr.push(gbox);
+  });
+  target['groups']=arr;
+
+  console.log(target);
   const a = document.createElement('a');
   a.href = 'data:text/plain,' + encodeURIComponent(JSON.stringify(target));
   a.download = 'template.json';
@@ -173,6 +194,7 @@ $(document).on('click', '#btn-save', function (d) {
 ---------------------------------------*/
 $(document).on('change', '#btn-load', function (d) {
   $('#wrap-items').empty();
+  $('#wrap-groups').empty();
   var file = d.target.files;
   var reader = new FileReader();
   reader.readAsText(file[0]);
@@ -180,8 +202,14 @@ $(document).on('change', '#btn-load', function (d) {
     var data = JSON.parse(reader.result);
     data['data'].forEach(function (row){
       console.log(row);
-      getItemData(row['name'],row['isShadow']);
-    })
+      $('#wrap-items').append(getItemData(row['name'],row['isShadow']));
+      updateSortable();
+    });
+
+    data['groups'].forEach(function (gp){
+      addGroupBox(gp['title'],gp['memo'],gp['data']);
+    });
+
     calculatePartsAmounts();
     updateSortable();
   }
@@ -192,21 +220,31 @@ $(document).on('change', '#btn-load', function (d) {
 グループ追加ボタン押下時
 ---------------------------------------*/
 $(document).on('click', '#btn-add-group', function (d) {
+  addGroupBox('','',null);
+  updateSortable();
+});
+
+function addGroupBox(title,memo,data){
+  var s = '';
+  data.forEach(function (r){
+    s+= getItemData(r['name'],r['isShadow']);
+  });
+
   var rand = Math.random();
   var str = '' +
       '<div class="group-box">' +
-      '  <input type="text" class="group-text"/>' +
-      '  <div class="sortable-area group-items"></div>' +
+      '  <input type="text" class="group-text" value="' + title + '"/>' +
+      '  <div class="sortable-area group-items">' + s + '</div>' +
       '  <div class="btn-group-box">' +
       '    <label for="g_del_' + rand + '" class="label-group-del">' +
       '      <img src="./img/trash.svg" class="img-group-del" />' +
       '      <input type="button" class="btn-group-delete" value="del" id="g_del_' + rand + '"/>' +
       '    </label>' +
       '  </div>' +
+      '  <textarea class="etc">' + memo + '</textarea>' +
       '</div>';
   $('#wrap-groups').append(str);
-  updateSortable();
-});
+}
 
 
 /*---------------------------------------
@@ -265,8 +303,7 @@ function getItemData(name, isShadow = false){
     '    </label>' +
     '  </div>' +
     '</div>' ; 
-  $('#wrap-items').append(str);
-  updateSortable();
+  return str;
 }
 
 function getPartsURL(name){
@@ -299,6 +336,14 @@ function calculatePartsAmounts(){
     }); 
   });
 
+  $('#wrap-groups').find('.group-box').each(function (index, p2_element){
+    $(p2_element).find('.parts').each(function (index,c2_element){
+      if($(c2_element).hasClass(FLAG_IS_SELECTED) == false){
+        partsAmount[$(c2_element).attr('item-name')] += 1;
+      }
+    }); 
+  });
+
   console.log(partsAmount);
   //パーツ数をパーツリストに付与
   $('#need-parts').find('.parts-amounts').each(function (index, element){
@@ -327,5 +372,20 @@ function calculatePartsAmounts(){
 function updateSortable(){
   $('.sortable-area').sortable({
     connectWith: '.sortable-area'
+  });
+}
+
+/*---------------------------------------
+グループボックスを削除する
+---------------------------------------*/
+function clearGroupBox(){
+  $('#wrap-groups').find('.group-box').each(function (index, element){
+    //最初の箱だけ残して後は消す
+    if(index == 0){
+      $(element).find('.group-text').val('');
+      $(element).find('.group-items').empty();
+    }else{
+      $(element).remove();
+    }
   });
 }

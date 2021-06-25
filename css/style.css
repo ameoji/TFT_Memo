@@ -90,11 +90,17 @@ ul{
     background-color: skyblue;
 }
 
+.etc{
+    width: 100%;
+    resize: vertical;
+}
+
 .group-box{
     display: inline-block;
     width: 270px;
     vertical-align: top;
     margin: 5px;
+    background-color: silver;
 }
 
 .group-items{
