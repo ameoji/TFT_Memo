@@ -226,9 +226,11 @@ $(document).on('click', '#btn-add-group', function (d) {
 
 function addGroupBox(title,memo,data){
   var s = '';
-  data.forEach(function (r){
-    s+= getItemData(r['name'],r['isShadow']);
-  });
+  if(data != null){
+    data.forEach(function (r){
+      s+= getItemData(r['name'],r['isShadow']);
+    });
+  }
 
   var rand = Math.random();
   var str = '' +
