@@ -1,0 +1,120 @@
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <script src="./js/define.js"></script>
+  <script src="./js/logic.js"></script>
+  <script src="./js/templates.js"></script>
+  <script>
+    window.onload = function () {
+      initialized();
+    }
+  </script>
+  <title> TFTメモ </title>
+</head>
+
+<body>
+  <!-- ピック予定の完成品一覧 -->
+  <ul id="pick-items" class="comp-items">
+    <li class="item-box wh-50 pick-box">
+      <div class="img-box wh-46">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+    <li class="item-box wh-50">
+      <div class="img-box wh-46 pick-box">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+  </ul>
+
+  <!-- パーツ一覧 -->
+  <ul id="need-parts">
+    <li class="parts-box"> 
+      <div class="img-box wh-46 parts-img">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+      <div class="parts-cross">×</div>
+      <div class="parts-amounts" item-name="xxx">4</div>
+    </li>
+    <li class="parts-box"> 
+      <div class="img-box wh-46 parts-img">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+      <div class="parts-cross">×</div>
+      <div class="parts-amounts" item-name="xxx">4</div>
+    </li>
+  </ul>
+
+  <!-- 管理ボタン -->
+  <input type="button" id="btn-clear" value="ALL CLEAR">
+  <select id="template-box">
+    <option value="">------</option>
+    <option value="TEMPLATE1">キャバリエ、スペルウィーバー</option>
+    <option value="TEMPLATE2">4 ドラゴンスレイヤー4 ナイトブリンガー3 スカーミッシャー</option>
+  </select>
+  <label for="btn-save" class="btn-save">
+    <span>SAVE</span>
+    <input type="button" id="btn-save" value="SAVE">
+  </label>
+  <label for="btn-load" class="btn-load">
+    <span>LOAD</span>
+    <input type="file" id="btn-load" value="LOAD">
+  </label>
+
+  <!-- 選択したアイテムの一覧 -->
+  <div id="wrap-items" class="sortable-area">
+    <div class="selected-box" item-name="abc">
+      <div class="dd-box"></div>
+      <input type="checkbox" class="chk-shadow" />
+      <ul class="items">
+        <li class="item-box wh-48 comp">
+          <div class="img-box wh-46">
+            <img src="./tmp/img.png" class="wh-44 img-item" />
+          </div>
+        </li>
+        <li class="item-box wh-48 parts">
+          <div class="img-box wh-46">
+            <img src="./tmp/img.png" class="wh-44 img-item" />
+          </div>
+        </li>
+        <li class="item-box wh-48 parts">
+          <div class="img-box wh-46">
+            <img src="./tmp/img.png" class="wh-44 img-item" />
+          </div>
+        </li>
+      </ul>
+      <div class="btn-box">
+        <label for="del1" class="label-del">
+          <img src="./img/trash.svg" class="img-del" />
+          <input type="button" class="btn-delete" value="del" id="del1"/>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <input type="button" id="btn-add-group" value="ADD GROUP">
+
+  <div id="wrap-groups">
+    <div class="group-box">
+      <input type="text" class="group-text"/>
+      <div class="sortable-area group-items"></div>
+      <div class="btn-group-box">
+        <label for="g_del_1" class="label-group-del">
+          <img src="./img/trash.svg" class="img-group-del" />
+          <input type="button" class="btn-group-delete" value="del" id="g_del_1"/>
+        </label>
+      </div>
+      <textarea class="etc"></textarea>
+    </div>
+  </div>
+
+</body>
+
+
+</html>
