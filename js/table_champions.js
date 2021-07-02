@@ -8,22 +8,22 @@ const CHAMPIONS_TABLE = {
         {
           name: "Sunfire Cape",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Ironclad Emblem",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Warmog's Armor",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Gargoyle Stoneplate",
           is_required: false,
-          is_shadow: true,
+          isShadow: true,
         },
       ]
     },
@@ -36,22 +36,22 @@ const CHAMPIONS_TABLE = {
         {
           name: 'Last Whisper',
           is_required: true,
-          is_shadow: true,
+          isShadow: true,
         },
         {
           name: "Jeweled Gauntlet",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: 'Spear of Shojin',
           is_required: true,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Guinsoo's Rageblade",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
       ]
     },
@@ -64,17 +64,17 @@ const CHAMPIONS_TABLE = {
         {
           name: 'Spear of Shojin',
           is_required: true,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Guinsoo's Rageblade",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Archangel's Staff",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
       ]
     },
@@ -87,17 +87,17 @@ const CHAMPIONS_TABLE = {
         {
           name: "Gargoyle Stoneplate",
           is_required: true,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Sunfire Cape",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Warmog's Armor",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
       ]
     },
@@ -110,17 +110,17 @@ const CHAMPIONS_TABLE = {
         {
           name: 'Spear of Shojin',
           is_required: true,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Guinsoo's Rageblade",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         },
         {
           name: "Archangel's Staff",
           is_required: false,
-          is_shadow: false,
+          isShadow: false,
         }
       ]
     },

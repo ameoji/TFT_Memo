@@ -41,7 +41,7 @@ function initialized() {
           src = './tmp/img.png';
         }
         var str = '' +
-          '<li class="item-box wh-50 pick-box" id="' + row['name'] + '">' +
+          '<li class="item-box wh-50 pick-champion-box" id="' + row['name'] + '" cost="' + i + '">' +
           '  <div class="img-box wh-46">' +
           '    <img src="' + src + '" class="wh-46 img-item" />' +
           '  </div>' +
@@ -67,9 +67,7 @@ $(document).on('click', '.tab-button' , function() {
   $('.tabs').each(function (index, element){
     $(element).css('display','none');
   });
-  $('#' + $(this).attr('target')).css('display','block')
-  
-
+  $('#' + $(this).attr('target')).css('display','block');
 });
 
 /*---------------------------------------
@@ -78,6 +76,24 @@ $(document).on('click', '.tab-button' , function() {
 $(document).on('click', '.pick-box' , function() {
   var ID = $(this).attr('id');
   $('#wrap-items').append(getItemData(ID,false));
+  updateSortable();
+  calculatePartsAmounts();
+});
+
+/*---------------------------------------
+使うチャンピオンを選択するボックスの挙動
+---------------------------------------*/
+$(document).on('click', '.pick-champion-box' , function() {
+  var ID = $(this).attr('id');
+  // $('#wrap-items').append(getItemData(ID,false));
+
+  var cost_champions = CHAMPIONS_TABLE[$(this).attr('cost')];
+  cost_champions.forEach(function (row){
+    if(row['name'] == ID){
+      addGroupBox(ID,'',row['items']);
+    }
+  });
+
   updateSortable();
   calculatePartsAmounts();
 });
