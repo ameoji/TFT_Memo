@@ -8,14 +8,37 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
     integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
   <script src="./js/define.js"></script>
+  <script src="./js/table_champions.js"></script>
   <script src="./js/logic.js"></script>
   <script src="./js/templates.js"></script>
   <script>
     window.onload = function () {
-      initialized();
+      $('#pick-items').empty();
+      $('#need-parts').empty();
+      $('#wrap-items').empty();
+
+      for(var i = 1; i <= 5; i++){ 
+        CHAMPIONS_TABLE[i].forEach(function (row) {
+            var src = row['src'];
+            if (src == '') {
+              src = './tmp/img.png';
+            }
+            var str = '' +
+              '<li class="item-box wh-50 pick-box" id="' + row['name'] + '">' +
+              '  <div class="img-box wh-46">' +
+              '    <img src="' + src + '" class="wh-46 img-item" />' +
+              '  </div>' +
+              '</li>';
+            $('#pick-items').append(str);
+        });
+        $('#pick-items').append('<br>');
+      }
+
+      calculatePartsAmounts();
+      updateSortable();
     }
   </script>
-  <title> TFTメモ </title>
+  <title> champion別 | TFTメモ </title>
 </head>
 
 <body>

@@ -1,5 +1,6 @@
 function initialized() {
   $('#pick-items').empty();
+  $('#pick-champions').empty();
   $('#need-parts').empty();
   $('#wrap-items').empty();
 
@@ -32,10 +33,44 @@ function initialized() {
       '</li>';
     $('#need-parts').append(str);
   });
+
+  for(var i = 1; i <= 5; i++){ 
+    CHAMPIONS_TABLE[i].forEach(function (row) {
+        var src = row['src'];
+        if (src == '') {
+          src = './tmp/img.png';
+        }
+        var str = '' +
+          '<li class="item-box wh-50 pick-box" id="' + row['name'] + '">' +
+          '  <div class="img-box wh-46">' +
+          '    <img src="' + src + '" class="wh-46 img-item" />' +
+          '  </div>' +
+          '</li>';
+        $('#pick-champions').append(str);
+    });
+    $('#pick-champions').append('<br>');
+  }
+
   calculatePartsAmounts();
   updateSortable()
 }
 
+/*---------------------------------------
+タブの切り替え
+---------------------------------------*/
+$(document).on('click', '.tab-button' , function() {
+  $('.tab-button').each(function (index, element){
+    $(element).removeClass('is-active');
+  });
+  $(this).addClass('is-active');
+
+  $('.tabs').each(function (index, element){
+    $(element).css('display','none');
+  });
+  $('#' + $(this).attr('target')).css('display','block')
+  
+
+});
 
 /*---------------------------------------
 使うアイテムを選択するボックスの挙動

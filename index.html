@@ -7,6 +7,7 @@
     crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
     integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+  <script src="./js/table_champions.js"></script>
   <script src="./js/define.js"></script>
   <script src="./js/logic.js"></script>
   <script src="./js/templates.js"></script>
@@ -19,10 +20,32 @@
 </head>
 
 <body>
+  <ul class="tab-top-list">
+    <li class="tab-button is-active" id="tab-parts" target="pick-items">パーツ一覧</li>
+    <li class="tab-button" id="tab-champions" target="pick-champions">チャンピオン一覧</li>
+  </ul>
   <!-- ピック予定の完成品一覧 -->
-  <ul id="pick-items" class="comp-items">
+  <ul id="pick-items" class="comp-items tabs">
     <li class="item-box wh-50 pick-box">
       <div class="img-box wh-46">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+    <li class="item-box wh-50">
+      <div class="img-box wh-46 pick-box">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+  </ul>
+  <!-- ピック予定の完成品一覧 -->
+  <ul id="pick-champions" class="comp-champions tabs">
+    <li class="item-box wh-50 pick-box">
+      <div class="img-box wh-46">
+        <img src="./tmp/img.png" class="wh-46 img-item" />
+      </div>
+    </li>
+    <li class="item-box wh-50">
+      <div class="img-box wh-46 pick-box">
         <img src="./tmp/img.png" class="wh-46 img-item" />
       </div>
     </li>

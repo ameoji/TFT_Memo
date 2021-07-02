@@ -78,9 +78,22 @@ ul{
 .comp-items{
     vertical-align: middle;
     background-color: lightgrey;
-    margin: 10px 0;
+    /* background-image:url("../img/book.jpg"); */
+    margin: 4px 0 10px 0;
+    padding: 5px 1px;
     min-height: 50px;
     width: 100%;
+}
+
+.comp-champions{
+    vertical-align: middle;
+    background-color: lightgrey;
+    /* background-image:url("../img/book.jpg"); */
+    margin: 4px 0 10px 0;
+    padding: 5px 1px;
+    min-height: 50px;
+    width: 100%;
+    display: none;
 }
 
 .dd-box{
@@ -171,7 +184,7 @@ ul{
     display: block;
 }
 
-.img-item:hover , .btn-load:hover, .btn-save:hover{
+.img-item:hover , .btn-load:hover, .btn-save:hover, .tab-button:hover{
     opacity: .6;
     cursor: pointer;
 }
@@ -207,6 +220,19 @@ ul{
     border: solid;
     border-width: 0.5px;
     background-color: lightgrey;
+}
+
+.tab-button{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #CC3333;
+    color: white;
+}
+
+.tab-button.is-active{
+    background-color: #993333;
 }
 
 .wh-44{
