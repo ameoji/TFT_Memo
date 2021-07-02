@@ -195,6 +195,7 @@ $(document).on('click', '#btn-save', function (d) {
 $(document).on('change', '#btn-load', function (d) {
   $('#wrap-items').empty();
   $('#wrap-groups').empty();
+  $('#template-box').val("");
   var file = d.target.files;
   var reader = new FileReader();
   reader.readAsText(file[0]);
