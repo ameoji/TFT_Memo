@@ -69,9 +69,19 @@ ul{
     background-color: lightgrey;
 }
 
-.chk-shadow{
+.chk-box{
     display: inline-block;
-    height: 100%;
+}
+
+.chk-required{
+    display: none;
+    /* height: 50%; */
+    margin: 0 0 0 0;
+}
+
+.chk-shadow{
+    display: none;
+    /* height: 50%; */
     margin: 0 0 0 0;
 }
 
@@ -100,7 +110,7 @@ ul{
     display: inline-block;
     height: 100%;
     width: 15px;
-    background-color: skyblue;
+    background-color: #5e5e5e;
 }
 
 .etc{
@@ -127,6 +137,10 @@ ul{
 .group-text{
     width: 100%;
     height: 30px;
+}
+
+.label-chk{
+    height: 50%;
 }
 
 .label-del{
@@ -179,14 +193,24 @@ ul{
     height: 30px;
 }
 
+.img-fire, .img-required{
+    padding: 1px;
+    display: block;
+    opacity: .3;
+}
+
 .img-item{
     padding: 1px;
     display: block;
 }
 
-.img-item:hover , .btn-load:hover, .btn-save:hover, .tab-button:hover{
+.img-item:hover, .img-fire:hover, .img-required:hover, .btn-load:hover, .btn-save:hover, .tab-button:hover{
     opacity: .6;
     cursor: pointer;
+}
+
+.is-selected.img-fire, .is-selected.img-required{
+    opacity: 1;
 }
 
 .is-selected .img-item{
@@ -197,8 +221,11 @@ ul{
     background-color: black;
 }
 
-.is-shadow .img-box{
+/* .is-shadow .img-box{
     background-color: #00CC00;
+} */
+.is-shadow{
+    background-color: #c2e6ae !important;
 }
 
 .items{
@@ -233,6 +260,11 @@ ul{
 
 .tab-button.is-active{
     background-color: #993333;
+}
+
+.wh-22{
+    width: 22px;
+    height: 22px;
 }
 
 .wh-44{

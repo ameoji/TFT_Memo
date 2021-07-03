@@ -60,9 +60,9 @@ function initialized() {
 ---------------------------------------*/
 $(document).on('click', '.tab-button' , function() {
   $('.tab-button').each(function (index, element){
-    $(element).removeClass('is-active');
+    $(element).removeClass(FLAG_IS_ACTIVE);
   });
-  $(this).addClass('is-active');
+  $(this).addClass(FLAG_IS_ACTIVE);
 
   $('.tabs').each(function (index, element){
     $(element).css('display','none');
@@ -110,11 +110,24 @@ $(document).on('mousedown', '.dd-box' , function() {
 
 
 /*---------------------------------------
-チェックボックスの挙動
+シャドウチェックボックスの挙動
 ---------------------------------------*/
 $(document).on('click', '.chk-shadow' , function() {
-  var target =  $(this).parents('.selected-box').find('.comp');
+  var target_img =  $(this).parents('.label-chk').find('.img-fire');
+  target_img.toggleClass(FLAG_IS_SELECTED);
+  
+  var target =  $(this).parents('.selected-box');
   target.toggleClass(FLAG_IS_SHADOWN);
+  
+});
+
+
+/*---------------------------------------
+必須チェックボックスの挙動
+---------------------------------------*/
+$(document).on('click', '.chk-required' , function() {
+  var target_img =  $(this).parents('.label-chk').find('.img-required');
+  target_img.toggleClass(FLAG_IS_SELECTED);
 });
 
 
@@ -321,20 +334,36 @@ function getItemData(name, isShadow = false, isRequired = false){
     }
   });
 
+  if(data['parts1'] == S_HERA || data['parts2'] == S_HERA ){
+    isShadow = true;
+  }
+
   var strShadow = '';
   var strShadowFlag = '';
   if(isShadow){
     strShadow = FLAG_IS_SHADOWN;
     strShadowFlag = 'checked="checked"';
+    strShadowSelected = FLAG_IS_SELECTED;
   }
 
   var rand = Math.random();
+  var rand2 = Math.random();
+  var rand3 = Math.random();
   var str = '' +
-    '<div class="selected-box" item-name="' + name +'">' +
+    '<div class="selected-box ' + strShadow +'" item-name="' + name +'">' +
     '  <div class="dd-box"></div>' +
-    '  <input type="checkbox" class="chk-shadow" ' + strShadowFlag +'/>' +
+    '  <div class="chk-box">' +
+    '    <label for="' + rand2 + '" class="label-chk">' +
+    '      <input type="checkbox" class="chk-shadow" ' + strShadowFlag +' id="' + rand2 + '"/>' +
+    '      <img src="./img/fire.svg" class="wh-22 img-fire ' + strShadowSelected +'" />' +
+    '    </label>' +
+    '    <label for="' + rand3 + '" class="label-chk">' +
+    '      <input type="checkbox" class="chk-required" id="' + rand3 + '"/>' +
+    '      <img src="./img/check.svg" class="wh-22 img-required" />' +
+    '    </label>' +
+    '  </div>' +
     '  <ul class="items">' +
-    '    <li class="item-box wh-48 comp ' + strShadow +'">' +
+    '    <li class="item-box wh-48 comp">' +
     '      <div class="img-box wh-46">' +
     '        <img src="' + data['img_src'] + '" class="wh-44 img-item" />' +
     '      </div>' +

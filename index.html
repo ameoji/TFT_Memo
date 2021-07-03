@@ -20,6 +20,8 @@
 </head>
 
 <body>
+  
+
   <ul class="tab-top-list">
     <li class="tab-button is-active" id="tab-parts" target="pick-items">パーツ一覧</li>
     <li class="tab-button" id="tab-champions" target="pick-champions">チャンピオン一覧</li>
@@ -39,18 +41,18 @@
   </ul>
   <!-- ピック予定の完成品一覧 -->
   <ul id="pick-champions" class="comp-champions tabs">
-    <li class="item-box wh-50 pick-box">
+    <li class="item-box wh-50 pick-champion-box" id="1" cost="1">
       <div class="img-box wh-46">
         <img src="./tmp/img.png" class="wh-46 img-item" />
       </div>
     </li>
     <li class="item-box wh-50">
-      <div class="img-box wh-46 pick-box">
+      <div class="img-box wh-46 pick-champion-box" id="2" cost="1">
         <img src="./tmp/img.png" class="wh-46 img-item" />
       </div>
     </li>
     <li class="item-box wh-50">
-      <div class="img-box wh-46 pick-box">
+      <div class="img-box wh-46 pick-champion-box" id="3" cost="1">
         <img src="./tmp/img.png" class="wh-46 img-item" />
       </div>
     </li>
@@ -94,7 +96,16 @@
   <div id="wrap-items" class="sortable-area">
     <div class="selected-box" item-name="abc">
       <div class="dd-box"></div>
-      <input type="checkbox" class="chk-shadow" />
+      <div class="chk-box">
+        <label for="l1" class="label-chk">
+          <input type="checkbox" class="chk-shadow" id="l1"/>
+          <img src="./img/fire.svg" class="wh-22 img-fire" />
+        </label>
+        <label for="l2" class="label-chk">
+          <input type="checkbox" class="chk-required" id="l2"/>
+          <img src="./img/check.svg" class="wh-22 img-required" />
+        </label>
+      </div>
       <ul class="items">
         <li class="item-box wh-48 comp">
           <div class="img-box wh-46">
