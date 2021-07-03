@@ -108,20 +108,25 @@ const CHAMPIONS_TABLE = {
       src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9vRmlSMTRCRi5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0LCJmaXQiOiJjb3ZlciJ9fX0=',
       items:[
         {
-          name: 'Spear of Shojin',
+          name: "Warmog's Armor",
+          is_required: false,
+          isShadow: true,
+        },
+        {
+          name: "Sunfire Cape",
+          is_required: false,
+          isShadow: false,
+        },
+        {
+          name: "Gargoyle Stoneplate",
           is_required: true,
           isShadow: false,
         },
         {
-          name: "Guinsoo's Rageblade",
+          name: "Titan's Resolve",
           is_required: false,
           isShadow: false,
         },
-        {
-          name: "Archangel's Staff",
-          is_required: false,
-          isShadow: false,
-        }
       ]
     },
   ],  

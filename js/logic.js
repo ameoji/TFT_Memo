@@ -313,7 +313,7 @@ $(document).on('click', '.btn-group-delete' , function() {
 /*---------------------------------------
 アイテムの構成情報を取得
 ---------------------------------------*/
-function getItemData(name, isShadow = false){
+function getItemData(name, isShadow = false, isRequired = false){
   var data = null;
   ITEM_TABLE.forEach(function (row){
     if(name == row['name']){
