@@ -221,9 +221,10 @@ ul{
     background-color: black;
 }
 
-/* .is-shadow .img-box{
-    background-color: #00CC00;
-} */
+.is-required{
+    border-color: red !important;
+}
+
 .is-shadow{
     background-color: #c2e6ae !important;
 }

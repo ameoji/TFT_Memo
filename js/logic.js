@@ -128,6 +128,11 @@ $(document).on('click', '.chk-shadow' , function() {
 $(document).on('click', '.chk-required' , function() {
   var target_img =  $(this).parents('.label-chk').find('.img-required');
   target_img.toggleClass(FLAG_IS_SELECTED);
+
+  var target =  $(this).parents('.selected-box');
+  target.toggleClass(FLAG_IS_REQUIRED);
+
+  calculatePartsAmounts();
 });
 
 
@@ -220,6 +225,7 @@ $(document).on('click', '#btn-save', function (d) {
     var row = {};
     row['name'] = $(element).attr('item-name');
     row['isShadow'] = $(element).find('.chk-shadow').prop('checked');
+    row['isRequired'] = $(element).find('.chk-required').prop('checked');
     target['data'].push(row);
   });
 
@@ -234,6 +240,7 @@ $(document).on('click', '#btn-save', function (d) {
       var row = {};
       row['name'] = $(g_element).attr('item-name');
       row['isShadow'] = $(g_element).find('.chk-shadow').prop('checked');
+      row['isRequired'] = $(g_element).find('.chk-required').prop('checked');
       gbox['data'].push(row);
     });
 
@@ -267,7 +274,7 @@ $(document).on('change', '#btn-load', function (d) {
     var data = JSON.parse(reader.result);
     data['data'].forEach(function (row){
       console.log(row);
-      $('#wrap-items').append(getItemData(row['name'],row['isShadow']));
+      $('#wrap-items').append(getItemData(row['name'],row['isShadow'],row['isRequired']));
       updateSortable();
     });
 
@@ -293,7 +300,7 @@ function addGroupBox(title,memo,data){
   var s = '';
   if(data != null){
     data.forEach(function (r){
-      s+= getItemData(r['name'],r['isShadow']);
+      s+= getItemData(r['name'],r['isShadow'],r['isRequired']);
     });
   }
 
@@ -340,17 +347,27 @@ function getItemData(name, isShadow = false, isRequired = false){
 
   var strShadow = '';
   var strShadowFlag = '';
+  var strShadowSelected = '';
   if(isShadow){
     strShadow = FLAG_IS_SHADOWN;
     strShadowFlag = 'checked="checked"';
     strShadowSelected = FLAG_IS_SELECTED;
   }
 
+  var strRequired = '';
+  var strRequiredFlag = '';
+  var strRequiredSelected = '';
+  if(isRequired){
+    strRequired = FLAG_IS_REQUIRED;
+    strRequiredFlag = 'checked="checked"';
+    strRequiredSelected = FLAG_IS_SELECTED;
+  }
+
   var rand = Math.random();
   var rand2 = Math.random();
   var rand3 = Math.random();
   var str = '' +
-    '<div class="selected-box ' + strShadow +'" item-name="' + name +'">' +
+    '<div class="selected-box ' + strShadow +' ' + strRequired +'" item-name="' + name +'">' +
     '  <div class="dd-box"></div>' +
     '  <div class="chk-box">' +
     '    <label for="' + rand2 + '" class="label-chk">' +
@@ -358,8 +375,8 @@ function getItemData(name, isShadow = false, isRequired = false){
     '      <img src="./img/fire.svg" class="wh-22 img-fire ' + strShadowSelected +'" />' +
     '    </label>' +
     '    <label for="' + rand3 + '" class="label-chk">' +
-    '      <input type="checkbox" class="chk-required" id="' + rand3 + '"/>' +
-    '      <img src="./img/check.svg" class="wh-22 img-required" />' +
+    '      <input type="checkbox" class="chk-required" ' + strRequiredFlag +' id="' + rand3 + '"/>' +
+    '      <img src="./img/check.svg" class="wh-22 img-required ' + strRequiredSelected +'" />' +
     '    </label>' +
     '  </div>' +
     '  <ul class="items">' +
@@ -411,20 +428,25 @@ function calculatePartsAmounts(){
   });
   
   //選択中のアイテムから必要パーツ数を計算
+  //一時アイテム欄
   $('#wrap-items').children().each(function (index, p_element){
-    $(p_element).find('.parts').each(function (index,c_element){
-      if($(c_element).hasClass(FLAG_IS_SELECTED) == false){
-        partsAmount[$(c_element).attr('item-name')] += 1;
-      }
-    }); 
+    if($(p_element).hasClass(FLAG_IS_REQUIRED)){
+      $(p_element).find('.parts').each(function (index,c_element){
+        if($(c_element).hasClass(FLAG_IS_SELECTED) == false){
+          partsAmount[$(c_element).attr('item-name')] += 1;
+        }
+      }); 
+    }
   });
-
-  $('#wrap-groups').find('.group-box').each(function (index, p2_element){
-    $(p2_element).find('.parts').each(function (index,c2_element){
-      if($(c2_element).hasClass(FLAG_IS_SELECTED) == false){
-        partsAmount[$(c2_element).attr('item-name')] += 1;
-      }
-    }); 
+  //グループボックス欄
+  $('#wrap-groups').find('.selected-box').each(function (index, p2_element){
+    if($(p2_element).hasClass(FLAG_IS_REQUIRED)){
+      $(p2_element).find('.parts').each(function (index,c2_element){
+        if($(c2_element).hasClass(FLAG_IS_SELECTED) == false){
+          partsAmount[$(c2_element).attr('item-name')] += 1;
+        }
+      }); 
+    }
   });
 
   console.log(partsAmount);
