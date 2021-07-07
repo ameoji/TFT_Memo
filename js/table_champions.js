@@ -8,22 +8,18 @@ const CHAMPIONS_TABLE = {
         {
           name: "Sunfire Cape",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Ironclad Emblem",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Warmog's Armor",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Gargoyle Stoneplate",
           isRequired: false,
-          isShadow: true,
         },
       ]
     },
@@ -36,17 +32,14 @@ const CHAMPIONS_TABLE = {
         {
           name: "Ionic Spark",
           isRequired: true,
-          isShadow: true,
         },
         {
           name: "Titan's Resolve",
           isRequired: true,
-          isShadow: true,
         },
         {
           name: "Warmog's Armor",
           isRequired: false,
-          isShadow: false,
         },
       ]
     },
@@ -57,22 +50,18 @@ const CHAMPIONS_TABLE = {
         {
           name: 'Last Whisper',
           isRequired: true,
-          isShadow: true,
-        },
-        {
-          name: "Jeweled Gauntlet",
-          isRequired: false,
-          isShadow: false,
         },
         {
           name: 'Spear of Shojin',
           isRequired: true,
-          isShadow: false,
+        },
+        {
+          name: "Jeweled Gauntlet",
+          isRequired: false,
         },
         {
           name: "Guinsoo's Rageblade",
           isRequired: false,
-          isShadow: false,
         },
       ]
     },
@@ -85,17 +74,14 @@ const CHAMPIONS_TABLE = {
         {
           name: 'Spear of Shojin',
           isRequired: true,
-          isShadow: false,
         },
         {
           name: "Guinsoo's Rageblade",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Archangel's Staff",
           isRequired: false,
-          isShadow: false,
         },
       ]
     },
@@ -108,32 +94,26 @@ const CHAMPIONS_TABLE = {
         {
           name: "Deathblade",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Guinsoo's Rageblade",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: 'Last Whisper',
           isRequired: false,
-          isShadow: false,
         },
         {
           name: 'Infinity Edge',
           isRequired: false,
-          isShadow: false,
         },
         {
           name: 'Bloodthirster',
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Runaan's Hurricane",
           isRequired: false,
-          isShadow: false,
         },
       ]
     },
@@ -144,17 +124,14 @@ const CHAMPIONS_TABLE = {
         {
           name: "Gargoyle Stoneplate",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Sunfire Cape",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Warmog's Armor",
           isRequired: false,
-          isShadow: false,
         },
       ]
     },
@@ -167,22 +144,18 @@ const CHAMPIONS_TABLE = {
         {
           name: "Warmog's Armor",
           isRequired: false,
-          isShadow: true,
         },
         {
           name: "Sunfire Cape",
           isRequired: false,
-          isShadow: false,
         },
         {
           name: "Gargoyle Stoneplate",
           isRequired: true,
-          isShadow: false,
         },
         {
           name: "Titan's Resolve",
           isRequired: false,
-          isShadow: false,
         },
       ]
     },
