@@ -2,7 +2,7 @@
 const CHAMPIONS_TABLE = {
   1:[
     {
-      name:"Varus",
+      name:"Leona",
       src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9pR1YxTlhObS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0LCJmaXQiOiJjb3ZlciJ9fX0=',
       items:[
         {
@@ -105,6 +105,11 @@ const CHAMPIONS_TABLE = {
       name:"Aphelios",
       src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9IazRubTNFWS5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0LCJmaXQiOiJjb3ZlciJ9fX0=',
       items:[
+        {
+          name: "Deathblade",
+          isRequired: false,
+          isShadow: false,
+        },
         {
           name: "Guinsoo's Rageblade",
           isRequired: false,
