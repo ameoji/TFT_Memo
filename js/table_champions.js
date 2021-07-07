@@ -30,6 +30,27 @@ const CHAMPIONS_TABLE = {
   ],
   2:[
     {
+      name:"Hecarim",
+      src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9mcGZkOWRZVy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0LCJmaXQiOiJjb3ZlciJ9fX0=',
+      items:[
+        {
+          name: "Ionic Spark",
+          isRequired: true,
+          isShadow: true,
+        },
+        {
+          name: "Titan's Resolve",
+          isRequired: true,
+          isShadow: true,
+        },
+        {
+          name: "Warmog's Armor",
+          isRequired: false,
+          isShadow: false,
+        },
+      ]
+    },
+    {
       name:"Varus",
       src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9BSlhDYzhIOC5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0LCJmaXQiOiJjb3ZlciJ9fX0=',
       items:[
@@ -117,7 +138,7 @@ const CHAMPIONS_TABLE = {
       items:[
         {
           name: "Gargoyle Stoneplate",
-          isRequired: true,
+          isRequired: false,
           isShadow: false,
         },
         {
