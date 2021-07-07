@@ -345,39 +345,39 @@ const ITEM_TABLE = [
 const PARTS_TABLE = [
   {
     name:BF,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC8wSFJXVzBkQy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/bf.png',
   },
   {
     name:RB,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9yQ2lXVW9mbi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/rb.png',
   },
   {
     name:MUDADEKA,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9GYlZya2JsNS5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/mudadeka.png',
   },
   {
     name:TEAR,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC95Zzd4RlQ1Zy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/tear.png',
   },
   {
     name:VEST,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC85M0tWdGY5Yi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/vest.png',
   },
   {
     name:CLOAK,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9aOXRiZWNyMi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/cloak.png',
   },
   {
     name:BELT,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9veEhqWnh6bi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/belt.png',
   },
   {
     name:GROVES,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9qaGw2T0t4Ri5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/grove.png',
   },
   {
     name:HERA,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9NVGE5N0hyby5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    src:'./img/parts/hera.png',
   },
   {
     name:S_HERA,
