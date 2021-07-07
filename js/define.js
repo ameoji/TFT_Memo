@@ -70,12 +70,6 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
-    name: 'Forgotten Emblem',
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC84V2xYQVoyeC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: BF,
-    parts2: S_HERA,
-  },
-  {
     name: 'Rapid Firecannon',
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9URngwYXJTVC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: RB,
@@ -124,12 +118,6 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
-    name: "Hellion Emblem",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC92MmE0M1ZhQy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: RB,
-    parts2: S_HERA,
-  },
-  {
     name: "Bramble Vest",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC94VDZKS0JHUS5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: VEST,
@@ -172,12 +160,6 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
-    name: "Cavalier Emblem",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9HbldhYTNucy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: VEST,
-    parts2: S_HERA,
-  },
-  {
     name: "Dragon's Claw",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9oWUNLVVU5Qy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: CLOAK,
@@ -214,12 +196,6 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
-    name: "Revenant Emblem",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9aZURhaEo1Uy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: CLOAK,
-    parts2: S_HERA,
-  },
-  {
     name: "Rabadon's Deathcap",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9YNWwyWmtHcy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: MUDADEKA,
@@ -249,12 +225,6 @@ const ITEM_TABLE = [
     parts1: MUDADEKA,
     parts2: HERA,
   },
-  {
-    name: "Dragonslayer Emblem",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9tc3U4alVUSC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: MUDADEKA,
-    parts2: S_HERA,
-  },
   //涙
   {
     name: "Blue Buff",
@@ -281,12 +251,6 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
-    name: "Coven Emblem",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9TYkZoVEJMNy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: TEAR,
-    parts2: S_HERA,
-  },
-  {
     name: "Warmog's Armor",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9zcWpQU2JNNi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: BELT,
@@ -305,12 +269,6 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
-    name: "Nightbringer Emblem",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC96dkF5ZGowQi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
-    parts1: BELT,
-    parts2: S_HERA,
-  },
-  {
     name: "Thief's Gloves",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC81bmZBTFl5NC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
     parts1: GROVES,
@@ -323,16 +281,59 @@ const ITEM_TABLE = [
     parts2: HERA,
   },
   {
+    name: "Force of Nature",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9GSUFrMDZUaC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    parts1: HERA,
+    parts2: HERA,
+  },
+  
+  {
+    name: 'Forgotten Emblem',
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC84V2xYQVoyeC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: BF,
+    parts2: S_HERA,
+  },
+  {
+    name: "Hellion Emblem",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC92MmE0M1ZhQy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: RB,
+    parts2: S_HERA,
+  },
+  {
+    name: "Cavalier Emblem",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9HbldhYTNucy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: VEST,
+    parts2: S_HERA,
+  },
+  {
     name: "Abomination Emblem",
     img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9XaGhyV1IxNy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
     parts1: GROVES,
     parts2: S_HERA,
   },
   {
-    name: "Force of Nature",
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9GSUFrMDZUaC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
-    parts1: HERA,
-    parts2: HERA,
+    name: "Revenant Emblem",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9aZURhaEo1Uy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: CLOAK,
+    parts2: S_HERA,
+  },
+  {
+    name: "Dragonslayer Emblem",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9tc3U4alVUSC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: MUDADEKA,
+    parts2: S_HERA,
+  },
+  {
+    name: "Coven Emblem",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9TYkZoVEJMNy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: TEAR,
+    parts2: S_HERA,
+  },
+  {
+    name: "Nightbringer Emblem",
+    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC96dkF5ZGowQi5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    parts1: BELT,
+    parts2: S_HERA,
   },
   {
     name: "Force of Darkness",
@@ -381,6 +382,6 @@ const PARTS_TABLE = [
   },
   {
     name:S_HERA,
-    src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9ISXJ5TWQ0cC5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjozMiwiZml0IjoiY292ZXIifX19',
+    src:'./img/tmp.png',
   },
 ];

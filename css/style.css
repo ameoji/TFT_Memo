@@ -10,6 +10,9 @@ ul{
 }
 
 /* id */
+#btn-clear{
+    padding: 2px 5px;
+}
 
 #btn-load, #btn-save{
     display: none;
@@ -71,6 +74,7 @@ ul{
 
 .chk-box{
     display: inline-block;
+    height: 100%;
 }
 
 .chk-required{
@@ -140,7 +144,7 @@ ul{
 }
 
 .label-chk{
-    height: 50%;
+    height: 100%;
 }
 
 .label-del{

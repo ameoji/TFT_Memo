@@ -110,19 +110,6 @@ $(document).on('mousedown', '.dd-box' , function() {
 
 
 /*---------------------------------------
-シャドウチェックボックスの挙動
----------------------------------------*/
-$(document).on('click', '.chk-shadow' , function() {
-  var target_img =  $(this).parents('.label-chk').find('.img-fire');
-  target_img.toggleClass(FLAG_IS_SELECTED);
-  
-  var target =  $(this).parents('.selected-box');
-  target.toggleClass(FLAG_IS_SHADOWN);
-  
-});
-
-
-/*---------------------------------------
 必須チェックボックスの挙動
 ---------------------------------------*/
 $(document).on('click', '.chk-required' , function() {
@@ -207,7 +194,7 @@ $(document).on('change', '#template-box' , function(d) {
   var target = getTemplate(d.target.value);
   if(target != ''){
     target.forEach(function (row){
-      $('#wrap-items').append(getItemData(row['name'],row['isShadow']));
+      $('#wrap-items').append(getItemData(row['name']));
       updateSortable();
     });
   }
@@ -224,7 +211,6 @@ $(document).on('click', '#btn-save', function (d) {
   $('#wrap-items').children().each(function (index, element){
     var row = {};
     row['name'] = $(element).attr('item-name');
-    row['isShadow'] = $(element).find('.chk-shadow').prop('checked');
     row['isRequired'] = $(element).find('.chk-required').prop('checked');
     target['data'].push(row);
   });
@@ -239,7 +225,6 @@ $(document).on('click', '#btn-save', function (d) {
     $(element).find('.selected-box').each(function (index, g_element){
       var row = {};
       row['name'] = $(g_element).attr('item-name');
-      row['isShadow'] = $(g_element).find('.chk-shadow').prop('checked');
       row['isRequired'] = $(g_element).find('.chk-required').prop('checked');
       gbox['data'].push(row);
     });
@@ -274,7 +259,7 @@ $(document).on('change', '#btn-load', function (d) {
     var data = JSON.parse(reader.result);
     data['data'].forEach(function (row){
       console.log(row);
-      $('#wrap-items').append(getItemData(row['name'],row['isShadow'],row['isRequired']));
+      $('#wrap-items').append(getItemData(row['name'],row['isRequired']));
       updateSortable();
     });
 
@@ -300,7 +285,7 @@ function addGroupBox(title,memo,data){
   var s = '';
   if(data != null){
     data.forEach(function (r){
-      s+= getItemData(r['name'],r['isShadow'],r['isRequired']);
+      s+= getItemData(r['name'],r['isRequired']);
     });
   }
 
@@ -333,26 +318,13 @@ $(document).on('click', '.btn-group-delete' , function() {
 /*---------------------------------------
 アイテムの構成情報を取得
 ---------------------------------------*/
-function getItemData(name, isShadow = false, isRequired = false){
+function getItemData(name, isRequired = false){
   var data = null;
   ITEM_TABLE.forEach(function (row){
     if(name == row['name']){
       data = row;
     }
   });
-
-  if(data['parts1'] == S_HERA || data['parts2'] == S_HERA ){
-    isShadow = true;
-  }
-
-  var strShadow = '';
-  var strShadowFlag = '';
-  var strShadowSelected = '';
-  if(isShadow){
-    strShadow = FLAG_IS_SHADOWN;
-    strShadowFlag = 'checked="checked"';
-    strShadowSelected = FLAG_IS_SELECTED;
-  }
 
   var strRequired = '';
   var strRequiredFlag = '';
@@ -364,16 +336,11 @@ function getItemData(name, isShadow = false, isRequired = false){
   }
 
   var rand = Math.random();
-  var rand2 = Math.random();
   var rand3 = Math.random();
   var str = '' +
-    '<div class="selected-box ' + strShadow +' ' + strRequired +'" item-name="' + name +'">' +
+    '<div class="selected-box ' + strRequired +'" item-name="' + name +'">' +
     '  <div class="dd-box"></div>' +
     '  <div class="chk-box">' +
-    '    <label for="' + rand2 + '" class="label-chk">' +
-    '      <input type="checkbox" class="chk-shadow" ' + strShadowFlag +' id="' + rand2 + '"/>' +
-    '      <img src="./img/fire.svg" class="wh-22 img-fire ' + strShadowSelected +'" />' +
-    '    </label>' +
     '    <label for="' + rand3 + '" class="label-chk">' +
     '      <input type="checkbox" class="chk-required" ' + strRequiredFlag +' id="' + rand3 + '"/>' +
     '      <img src="./img/check.svg" class="wh-22 img-required ' + strRequiredSelected +'" />' +
