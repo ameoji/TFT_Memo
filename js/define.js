@@ -17,7 +17,7 @@ const S_HERA   = 'Shadow Spatula';
 const ITEM_TABLE = [
   {
     name: 'Deathblade',
-    img_src: 'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9iQzdwcG9CZy5qcGciLCJlZGl0cyI6eyJqcGVnIjp7InF1YWxpdHkiOjg1fSwicmVzaXplIjp7IndpZHRoIjoyNCwiZml0IjoiY292ZXIifX19',
+    img_src: './img/comps/LordsEdge.png',
     parts1: BF,
     parts2: BF,
   },

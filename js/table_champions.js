@@ -118,6 +118,28 @@ const CHAMPIONS_TABLE = {
       ]
     },
     {
+      name:"Karma",
+      src:'./img/champions/karma.png',
+      items:[
+        {
+          name: "Jeweled Gauntlet",
+          isRequired: false,
+        },
+        {
+          name: 'Spear of Shojin',
+          isRequired: false,
+        },
+        {
+          name: 'Infinity Edge',
+          isRequired: false,
+        },
+        {
+          name: "Blue Buff",
+          isRequired: false,
+        },
+      ]
+    },
+    {
       name:"Rell",
       src:'https://cdn.gamerch.com/resize/eyJidWNrZXQiOiJnYW1lcmNoLWltZy1jb250ZW50cyIsImtleSI6Indpa2lcLzEzOTJcL2VudHJ5XC9tRGJ1TjhZZy5wbmciLCJlZGl0cyI6eyJyZXNpemUiOnsid2lkdGgiOjY0LCJmaXQiOiJjb3ZlciJ9fX0=',
       items:[
@@ -132,6 +154,16 @@ const CHAMPIONS_TABLE = {
         {
           name: "Warmog's Armor",
           isRequired: false,
+        },
+      ]
+    },
+    {
+      name:"Velkoz",
+      src:'./img/champions/velkoz.png',
+      items:[
+        {
+          name: 'Spear of Shojin',
+          isRequired: true,
         },
       ]
     },

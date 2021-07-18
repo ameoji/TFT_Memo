@@ -226,7 +226,7 @@ ul{
 }
 
 .is-required{
-    border-color: red !important;
+    background-color: #c2ceff !important;
 }
 
 .is-shadow{

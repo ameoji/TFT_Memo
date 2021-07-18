@@ -75,7 +75,7 @@ $(document).on('click', '.tab-button' , function() {
 ---------------------------------------*/
 $(document).on('click', '.pick-box' , function() {
   var ID = $(this).attr('id');
-  $('#wrap-items').append(getItemData(ID,false));
+  $('#wrap-items').append(getItemData(ID));
   updateSortable();
   calculatePartsAmounts();
 });
@@ -85,7 +85,6 @@ $(document).on('click', '.pick-box' , function() {
 ---------------------------------------*/
 $(document).on('click', '.pick-champion-box' , function() {
   var ID = $(this).attr('id');
-  // $('#wrap-items').append(getItemData(ID,false));
 
   var cost_champions = CHAMPIONS_TABLE[$(this).attr('cost')];
   cost_champions.forEach(function (row){
@@ -129,7 +128,7 @@ $(document).on('click', '.chk-required' , function() {
 $(document).on('click', '.selected-box .comp' , function() {
   $(this).toggleClass(FLAG_IS_SELECTED);
 
-  //親の状態を粉に反映させる
+  //親の状態を子に反映させる
   var isSelected = $(this).hasClass(FLAG_IS_SELECTED)
   $(this).parents('ul').children('.parts').each(function (index, element){
     if(isSelected){
@@ -183,23 +182,6 @@ $(document).on('click', '#btn-clear' , function(d) {
   $('#template-box').val("");
   clearGroupBox();
   calculatePartsAmounts();
-});
-
-
-/*---------------------------------------
-テンプレート選択時の挙動
----------------------------------------*/
-$(document).on('change', '#template-box' , function(d) {
-  $('#wrap-items').empty();
-  var target = getTemplate(d.target.value);
-  if(target != ''){
-    target.forEach(function (row){
-      $('#wrap-items').append(getItemData(row['name']));
-      updateSortable();
-    });
-  }
-  calculatePartsAmounts();
-  updateSortable()
 });
 
 
@@ -318,7 +300,7 @@ $(document).on('click', '.btn-group-delete' , function() {
 /*---------------------------------------
 アイテムの構成情報を取得
 ---------------------------------------*/
-function getItemData(name, isRequired = false){
+function getItemData(name, isRequired = true){
   var data = null;
   ITEM_TABLE.forEach(function (row){
     if(name == row['name']){
